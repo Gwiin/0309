@@ -68,7 +68,15 @@ target2 : $@
 clean : 
 	rm ${TARGET}
 ```
+```makefile
+SRCS = ${wildcard *.c}
+TARGET = ${SRCS:.c=} # 확장자를 가지지 않게 함
 
+all: ${TARGET} 
+
+clean : 
+	rm ${TARGET}
+```
 
 
 
@@ -109,3 +117,11 @@ clean :
     printf("1 <= %d <= 9 : %s\n" ,num, (1<=num)&&(num<=9) ? "true" : "false");
     // '?' 삼항 연산자 ( [조건식] ? [참] : [거짓] )
 ```
+
+[compare실습](./c_example/compare.c)<br>
+```c
+#include <stdbool.h> <=c에서 true false 를 명시적으로 쓸때 stdbool헤더를 쓴다
+```
+
+형 변환 연산자 : `(자료형)피연산자 <= 해당 줄 이후에 다시 원래 자료형으로 돌아옴`
+
