@@ -313,3 +313,9 @@ p=&nums[0];
 
 ### 분할 컴파일
 
+`function.h`->`함수선언`
+`function.c`->`함수정의`
+`main.c`->`#include "function.h"`
+
+
+*[cmake사용법](./cmake사용법.md)*
