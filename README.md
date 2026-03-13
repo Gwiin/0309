@@ -305,3 +305,9 @@ p=&nums[0];
 // p+1 -> nums[1]
 ```
 
+
+`sudo apt install build-essential`
+`sudo apt install gdb`
+
+## [2026-03-13]
+
