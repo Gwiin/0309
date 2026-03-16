@@ -321,3 +321,52 @@ p=&nums[0];
 *[cmake사용법](./cmake사용법.md)*
 
 [야구게임실습](./c_example/part4/baseballGame)
+
+- static 정적변수
+
+
+```c
+#ifdef ~~~
+#define ~~~
+#endif 
+
+#pragma once
+```
+
+## [2026-03-16]
+
+### 구조체
+
+구조체 ---> Class ---> 객체 지향 언어
+절차(순서)지향 언어
+
+- struct : 사용자 정의 타입
+    내장타입 만으로는 코드가 굉장히 길어지게 된다<br>
+    -> 데이터를 묶어서 다룰 때 구조체 사용
+
+
+`ex) student 타입`
+```c
+int a
+float b
+    :
+    :
+```
+
+`typedef A B` : 별명 붙이기(가독성 ↑)
+
+대소문자 구분 : 식별자, 함수명, 변수명 모두 소문자 ( 사용자 정의 타입만 대문자!)
+
+
+멤버 연산자 
+ - `.` : 멤버 접근
+ - `->` : 간접멤버 접근 연산자
+
+```c
+Date d;
+Date *pD;
+printf("%d-%d-%d\n", d.year, d.month, d.day);
+printf("%d-%d-%d\n", (*pD).year, (*pD).month, (*pD).day); 
+printf("%d-%d-%d\n", pD->year, pD->month, pD->day);
+```
+
