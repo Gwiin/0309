@@ -6,15 +6,18 @@
 
 int main(void){
 
-    char *finpath = "/home/asd/0309/study/c_example/part6/scoreProcess/score.dat";
-    char *foutpath = "/home/asd/0309/study/c_example/part6/scoreProcess/score.out";
+
+    char *finpath = "../../../../c_example/part6/scoreProcess/score.dat";
+    char *foutpath = "../../../../c_example/part6/scoreProcess/score.out";
+    // char *finpath = "/home/asd/0309/study/c_example/part6/scoreProcess/score.dat";
+    // char *foutpath = "/home/asd/0309/study/c_example/part6/scoreProcess/score.out";
     FILE *fin  = fopen(finpath,"r");
     FILE *fout = fopen(foutpath,"w");
     int n;
 
-    printf("처리할 학생의 수를 입력하세요: ");
-    if (scanf("%d",&n)!=1)
-        return 1;
+    // printf("처리할 학생의 수를 입력하세요: ");
+    // if (scanf("%d",&n)!=1)
+    //     return 1;
 
     if (fin == NULL || fout == NULL) 
     {
@@ -22,8 +25,36 @@ int main(void){
         return 1;
     }
 
+    FILE *fin_count = fopen(finpath, "r");
+
+    if (fin_count == NULL)
+    {
+        fprintf(stderr, "파일을 열 수 없습니다.\n");
+        fclose(fin);
+        fclose(fout);
+        return 1;
+    }
+
+    n = 0;
+    char name[100];
+    int a, b, c;
+
+    while (fscanf(fin_count, "%99s %d %d %d", name, &a, &b, &c) == 4) {
+        n++;
+    }
+
+    fclose(fin_count);
+
+    if (n == 0)
+    {
+        fprintf(stderr, "학생 데이터가 없습니다.\n");
+        fclose(fin);
+        fclose(fout);
+        return 1;
+    }
+
     Sdata *students = (Sdata *)malloc(sizeof(Sdata) * n);
-    Sdata **table = (Sdata **)malloc(sizeof(Sdata) * n);
+    Sdata **table = (Sdata **)malloc(sizeof(Sdata*) * n);
 
     if(students == NULL || table == NULL)
     {
