@@ -7,8 +7,8 @@
 int main(void){
 
 
-    char *finpath = "../../../../c_example/part6/scoreProcess/score.dat";
-    char *foutpath = "../../../../c_example/part6/scoreProcess/score.out";
+    char *finpath = "../../../../study/c_example/part6/scoreProcess/score.dat";
+    char *foutpath = "../../../../study/c_example/part6/scoreProcess/score.out";
     // char *finpath = "/home/asd/0309/study/c_example/part6/scoreProcess/score.dat";
     // char *foutpath = "/home/asd/0309/study/c_example/part6/scoreProcess/score.out";
     FILE *fin  = fopen(finpath,"r");
@@ -39,7 +39,7 @@ int main(void){
     char name[100];
     int a, b, c;
 
-    while (fscanf(fin_count, "%99s %d %d %d", name, &a, &b, &c) == 4) {
+    while (fscanf(fin_count, "%99s %d %d %d", name, &a, &b, &c) == 4) { 
         n++;
     }
 
@@ -69,6 +69,9 @@ int main(void){
     sortPointers(students, table, n);
     printResult(fout, table, n);
     
+    free(students);
+    free(table);
+
     fclose(fin);
     fclose(fout);
     return 0;
