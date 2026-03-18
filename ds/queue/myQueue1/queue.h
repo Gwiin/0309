@@ -1,6 +1,7 @@
 #pragma once
 
 #include <stdio.h>
+#include <stdlib.h>
 #define QUEUESIZE 100
 
 typedef struct {

@@ -8,8 +8,10 @@
 
 int main(void){
 
-    Queue q1;
+    Queue q1, q2;
     initQueue(&q1);
+    initQueue(&q2);
+
 
     push(&q1, 100);
     push(&q1,200);
@@ -19,7 +21,22 @@ int main(void){
     printf("Second pop() : %d\n", pop(&q1));
     printf("Third pop() : %d\n", pop(&q1));
 
+    push(&q2, 400);
+    push(&q2, 500);
+    printf("First pop() q2 : %d\n", pop(&q2));
+    printf("Second pop() q2 : %d\n", pop(&q2));
+
+    push(&q2, 600);
+    printf("Third pop() q2 : %d\n", pop(&q2));
+
+
+    for(int i=0; i<99;i++){
+        push(&q2,i);
+        printf("%d , ",i);
+    }
+    for(int i=0; i<99;i++){
+        printf("%d번째 pop() %d\n",i,pop(&q2));
+    }
+
     return 0;
 }
-
-

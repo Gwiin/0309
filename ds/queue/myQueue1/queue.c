@@ -7,7 +7,7 @@ void initQueue(Queue *pq){
 
 
 void push(Queue *pq, int data){
-    if(pq->rear == QUEUESIZE){
+    if(pq->rear == pq->queue+QUEUESIZE){
         pq->rear = pq->queue;
     }
     if(pq->rear+1 == pq->front){
@@ -19,7 +19,7 @@ void push(Queue *pq, int data){
 }
 
 int pop(Queue *pq){
-    if(pq->front == QUEUESIZE){
+    if(pq->front == pq->queue+QUEUESIZE){
         pq->front = pq->queue;
     }
     if(pq->front == pq->rear){
