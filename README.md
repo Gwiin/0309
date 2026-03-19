@@ -418,3 +418,9 @@ VLA(variable length array) -> 동적할당없이 array 사용 가능
 - 그래프 (Graph)
 
 
+## [2026-03-19]
+
+WAN, LAN, MQTT, 포트포워딩
+
+MQTT 소켓(TCP  UDP)
+

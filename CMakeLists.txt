@@ -14,5 +14,6 @@ add_subdirectory(c_example/part6/scoreProcess)
 add_subdirectory(ds/stack/myStack1)
 add_subdirectory(ds/stack/myStack2)
 add_subdirectory(ds/stack/myStack3)
+add_subdirectory(ds/stack/myStack4)
 add_subdirectory(ds/queue/myQueue1)
 
