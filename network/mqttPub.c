@@ -15,7 +15,7 @@ int main() {
     MQTTClient_create(&client, ADDRESS, CLIENTID, MQTTCLIENT_PERSISTENCE_NONE, NULL);
 
     if (MQTTClient_connect(client, &conn_opts) != MQTTCLIENT_SUCCESS) {
-        printf("접속 실패!\n");
+        printf("접속 실패!!!\n");
         return -1;
     }
 
